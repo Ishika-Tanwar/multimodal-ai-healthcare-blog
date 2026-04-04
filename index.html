@@ -1,108 +1,594 @@
-<!-- ONLY CONTENT CHANGED, DESIGN SAME -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multimodal Generative AI for Intelligent Healthcare Systems</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.7;
+    }
+    header {
+      background-color: #0a192f;
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.2em;
+    }
+    header p {
+      font-size: 1.1em;
+      color: #a8b2d1;
+    }
+    main {
+      max-width: 900px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #0a192f;
+    }
+    img {
+      width: 100%;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+    .author {
+      margin-top: 40px;
+      background: #e6f1ff;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    /* .social-icons {
+      margin-top: 10px;
+    }
+    .social-icons a {
+      text-decoration: none;
+      margin-right: 10px;
+      color: #0a192f;
+      font-size: 22px;
+    } */
+
+    .connect {
+    margin-top: 30px;
+  text-align: center;
+}
+
+.connect h3 {
+  font-size: 1.4em;
+  margin-bottom: 15px;
+  color: #0078d7;
+}
+
+.connect .social-icons a {
+  font-size: 1.8em;
+  color: #333;
+  margin: 0 15px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.connect .social-icons a:hover {
+  color: #0078d7;
+  transform: scale(1.2);
+}
+.interaction-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 30px;
+} 
+
+#likeBtn, #shareBtn {
+  background-color: #0078d7;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+#likeBtn:hover, #shareBtn:hover {
+  background-color: #005fa3;
+  transform: scale(1.05);
+}
+
+#likeBtn.liked {
+  background-color: #e63946;
+}
+#likeCount {
+  margin-left: 10px;
+  font-size: 16px;
+  color: #555;
+}
+.share-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.share-options {
+  display: none;
+  position: absolute;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+  min-width: 180px;
+  z-index: 1;
+  top: 45px;
+}
+
+.share-options a {
+  color: #333;
+  padding: 10px 15px;
+  text-decoration: none;
+  display: block;
+  transition: background 0.2s;
+}
+
+.share-options a:hover {
+  background-color: #f0f0f0;
+}
+
+.share-dropdown:hover .share-options {
+  display: block;
+}
+
+.share-options i {
+  margin-right: 8px;
+}
+    /* .interaction-section {
+    text-align: center;
+    margin-top: 30px;
+    position: relative;
+  } */
+
+  /* .like-btn, .share-btn {
+    background-color: #0a192f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 8px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+
+  .like-btn:hover, .share-btn:hover {
+    background-color: #007acc;
+  }
+
+  .like-btn.liked {
+    background-color: red;
+    color: white;
+  }
+
+  .share-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    z-index: 100;
+  }
+
+  .share-menu a {
+    text-decoration: none;
+    color: #0a192f;
+    padding: 8px 15px;
+    display: block;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+  }
+
+  .share-menu a:hover {
+    background-color: #e6f1ff;
+  } */
+   .comment-box {
+      margin-top: 50px;
+      background-color: #f1f1f1;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    .comment-box h3 {
+      margin-bottom: 15px;
+      color: #0a192f;
+    }
+    .comment-box input, .comment-box textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1em;
+    }
+    .comment-box button {
+      background-color: #0a192f;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .comment-box button:hover {
+      background-color: #112240;
+    }
+  </style>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
 
 <header>
   <h1>Multimodal Generative AI for Intelligent Healthcare Systems</h1>
-  <p>Exploring the future of AI in modern healthcare</p>
+  <p>Exploring AI’s hidden vulnerabilities and defense mechanisms</p>
 </header>
 
 <main>
 
-<div class="container">
+  <div class="container">
 
-<h2>🧠 Introduction</h2>
-<p>
-Artificial Intelligence (AI) is growing very fast and is being used in many fields like education, business, and healthcare. In healthcare, AI helps doctors in diagnosis, treatment, and patient care.
-</p>
-<p>
-Earlier, most AI systems could work with only one type of data, such as text or images. But in real life, healthcare decisions depend on multiple types of information like patient symptoms, medical reports, and images such as X-rays or MRI scans.
-</p>
-<p>
-To solve this problem, a new technology called <b>Multimodal Generative AI</b> has been developed. It helps AI systems understand and use different types of data together, making them more powerful and intelligent.
-</p>
+    <h2>🌍 Introduction</h2>
+    <p>
+      Artificial Intelligence (AI) has transformed our world in extraordinary ways — from medical diagnosis systems and autonomous vehicles to recommendation engines and fraud detection. However, as AI becomes more deeply integrated into society, its vulnerabilities also become more apparent.
+    </p>
+    <p>
+      Among the most critical of these vulnerabilities are <strong>adversarial attacks</strong>, which reveal how easily intelligent systems can be manipulated. These attacks expose the fragility of models that often appear intelligent but can be fooled by subtle, almost imperceptible alterations to input data.
+    </p>
+    <p>
+      Understanding adversarial attacks is crucial for the safety, reliability, and ethical deployment of AI systems — particularly in domains where mistakes can have life-or-death consequences.
+    </p>
 
-<h2>🤖 What is Multimodal Generative AI?</h2>
-<p>
-Multimodal Generative AI is an advanced type of artificial intelligence that can:
-</p>
-<ul>
-<li>✔️ Understand multiple types of data (text, images, audio, etc.)</li>
-<li>✔️ Combine this information</li>
-<li>✔️ Generate meaningful outputs</li>
-</ul>
+    <h2>⚙️ What Exactly Is an Adversarial Attack?</h2>
+    <p>
+      In simple terms, an <strong>adversarial attack</strong> is when someone deliberately manipulates the input to an AI model in order to cause it to make a mistake. The input could be an image, text, or audio signal that has been slightly modified in a way that a human can’t detect — but which completely confuses the model.
+    </p>
+    <p>
+      For example, a self-driving car might rely on computer vision to identify a stop sign. If an attacker places a few small stickers on the sign, the car’s AI might interpret it as a speed limit sign instead. Humans still see a stop sign — but the machine sees something else entirely.
+    </p>
+    <p>
+      These tiny, carefully crafted changes are called <strong>adversarial perturbations</strong>, and the resulting tampered inputs are <strong>adversarial examples</strong>.
+    </p>
 
-<p>In simple words, it works like a human brain that can read, see, and understand things together.</p>
+    <h2>🧩 The Science Behind Adversarial Attacks</h2>
+    <p>
+      Machine learning models, particularly deep neural networks, work by identifying mathematical relationships between features in data. They learn to map complex input data (like images or sound waves) to specific outputs (like labels or decisions).
+    </p>
+    <p>
+      However, these models often rely on patterns that are statistically relevant but not necessarily meaningful to humans. Adversarial attacks exploit this property by tweaking those underlying patterns just enough to cross the model’s decision boundary.
+    </p>
+    <p>
+      Even a change as small as 0.1% in pixel intensity or word embedding can cause a confident misclassification.
+    </p>
+    <p>
+      <strong>Example:</strong><br>
+      Original input: 🐶 “dog” → correctly classified as “dog”<br>
+      Modified input (with noise): 🐶+δ → classified as “cat” (with 99% confidence!)
+    </p>
+    <p>This shows that <strong>AI perception ≠ human perception</strong> — and that’s precisely what attackers use to their advantage.</p>
 
-<p><b>📌 Example:</b></p>
-<ul>
-<li>🖼️ A patient uploads an X-ray image</li>
-<li>📝 Writes symptoms in text</li>
-<li>🤖 The AI analyzes both and gives a response</li>
-</ul>
+    <h2>⚔️ Types of Adversarial Attacks</h2>
+    <ol>
+      <li><strong>Evasion Attacks (Test-Time Attacks):</strong> The attacker crafts inputs to evade detection after the model has been trained.</li>
+      <li><strong>Poisoning Attacks (Training-Time Attacks):</strong> Attackers inject malicious data into training sets.</li>
+      <li><strong>Model Extraction Attacks:</strong> Reverse-engineering an AI model through repeated queries.</li>
+      <li><strong>Model Inversion Attacks:</strong> Reconstructing sensitive data from the model’s outputs.</li>
+      <li><strong>Membership Inference Attacks:</strong> Determining if specific data was used in training.</li>
+    </ol>
 
-<h2>⚙️ How Does It Work?</h2>
+    <h2>💥 Real-World Cases of Adversarial Attacks</h2>
+    <ul>
+      <li><strong>🚗 Autonomous Vehicles:</strong> Stickers on signs fooled Tesla’s vision system into misreading them.</li>
+      <li><strong>👁️ Facial Recognition Systems:</strong> Special glasses or scarves can make one person appear as another.</li>
+      <li><strong>🏥 Medical Imaging:</strong> Small pixel changes can cause misdiagnosis in AI medical systems.</li>
+      <li><strong>💳 Financial Fraud:</strong> Attackers manipulate data to bypass fraud detection models.</li>
+    </ul>
+  </div>
+  <!-- <section>
+    <h2>🌍Introduction</h2>
+    <p>Artificial Intelligence (AI) has transformed our world in extraordinary ways — from medical diagnosis systems and autonomous vehicles to recommendation engines and fraud detection. However, as AI becomes more deeply integrated into society, its vulnerabilities also become more apparent.
 
-<p><b>🔹 Input Data:</b> User provides text, images, or both.</p>
-<p><b>🔹 Data Conversion:</b> AI converts data into numerical form.</p>
+Among the most critical of these vulnerabilities are adversarial attacks, which reveal how easily intelligent systems can be manipulated. These attacks expose the fragility of models that often appear intelligent but can be fooled by subtle, almost imperceptible alterations to input data.
 
-<p><b>🔹 Understanding Data:</b></p>
-<ul>
-<li>📝 Text → Language models</li>
-<li>🖼️ Images → Vision models</li>
-</ul>
+Understanding adversarial attacks is crucial for the safety, reliability, and ethical deployment of AI systems — particularly in domains where mistakes can have life-or-death consequences..</p>
+  </section>
 
-<p><b>🔹 Combining Information:</b> AI links all data together.</p>
-<p><b>🔹 Generating Output:</b> AI produces meaningful results like diagnosis suggestions.</p>
+  <section>
+    <h2>🧠What Exactly Is an Adversarial Attack?</h2>
+    <p>In simple terms, an adversarial attack is when someone deliberately manipulates the input to an AI model in order to cause it to make a mistake. The input could be an image, text, or audio signal that has been slightly modified in a way that a human can’t detect — but which completely confuses the model.
 
-<p>This helps AI understand the complete situation.</p>
+For example, a self-driving car might rely on computer vision to identify a stop sign. If an attacker places a few small stickers on the sign, the car’s AI might interpret it as a speed limit sign instead. Humans still see a stop sign — but the machine sees something else entirely.
 
-<h2>🏥 Applications</h2>
-<ul>
-<li>🩻 Medical Image Analysis – Analyze X-rays, MRI scans</li>
-<li>🧬 Disease Prediction – Combine symptoms and reports</li>
-<li>📄 Medical Report Understanding – Explain reports</li>
-<li>💻 Telemedicine – Online doctor support</li>
-<li>🤖 AI Health Assistants – Basic medical help</li>
-<li>👨‍⚕️ Clinical Decision Support – Assist doctors</li>
-</ul>
+These tiny, carefully crafted changes are called adversarial perturbations, and the resulting tampered inputs are adversarial examples.</p>
+  </section>
+<section>
+  <h2>🧩 The Science Behind Adversarial Attacks</h2>
+  <p>Machine learning models, particularly deep neural networks, work by identifying mathematical relationships between features in data. They learn to map complex input data (like images or sound waves) to specific outputs (like labels or decisions).
 
-<h2>⚠️ Challenges</h2>
-<ul>
-<li>🔒 Data Privacy – Protect sensitive data</li>
-<li>💻 High Cost – Requires powerful systems</li>
-<li>🧩 Complex Models – Hard to design</li>
-<li>🔗 Data Integration – Difficult to combine data</li>
-</ul>
+However, these models often rely on patterns that are statistically relevant but not necessarily meaningful to humans. Adversarial attacks exploit this property by tweaking those underlying patterns just enough to cross the model’s decision boundary.
 
-<h2>🚫 Limitations</h2>
-<ul>
-<li>⚖️ Bias Problem – Unbalanced data causes errors</li>
-<li>❗ Hallucination – AI may generate wrong info</li>
-<li>🔍 Lack of Explainability – Hard to understand decisions</li>
-<li>📉 Data Quality Dependence – Poor data gives poor results</li>
-</ul>
+Even a change as small as 0.1% in pixel intensity or word embedding can cause a confident misclassification.
 
-<h2>🚀 Future Scope</h2>
-<ul>
-<li>🏥 Smart hospitals</li>
-<li>🤖 Advanced health assistants</li>
-<li>🧑‍⚕️ Personalized treatments</li>
-<li>🌍 Better rural healthcare</li>
-<li>⌚ Wearable device integration</li>
-</ul>
+For instance:
 
-<h2>✅ Conclusion</h2>
-<p>
-Multimodal Generative AI is a powerful advancement in artificial intelligence. It allows AI systems to understand multiple types of data together, making them more intelligent and efficient.
-</p>
+Original input: 🐶 “dog” → correctly classified as “dog”
 
-<ul>
-<li>🏥 Improve diagnosis</li>
-<li>👨‍⚕️ Support doctors</li>
-<li>💙 Provide better patient care</li>
-</ul>
+Modified input (with noise): 🐶+δ → classified as “cat” (with 99% confidence!)
 
-<p>
-Although there are challenges, the future of this technology is very bright. It has the potential to transform healthcare systems and improve quality of life.
-</p>
+This shows that AI perception ≠ human perception — and that’s precisely what attackers use to their advantage.</p>
+</section>
+  <section>
+    <h2>⚔️Types of Adversarial Attacks</h2>
+    <p>Adversarial attacks can be categorized based on their access level to the target model:</p>
+    <ul>
+      <li><b>White-box attacks:</b> The attacker has full knowledge of the model, including architecture and parameters.</li>
+      <li><b>Black-box attacks:</b> The attacker only knows the model’s output for given inputs and crafts attacks based on observed responses.</li>
+      <li><b>Targeted vs. Non-targeted attacks:</b> Targeted attacks aim for a specific incorrect output, while non-targeted attacks only intend to cause misclassification.</li>
+      <li><b>Evasion Attacks (Test-Time Attacks):</b> These occur after a model has been trained. The attacker crafts an input specifically to evade detection or classification.</li>
+      <li><b>Poisoning Attacks (Training-Time Attacks):</b> Attackers inject malicious data into the training dataset so the model learns incorrect associations.</li>
+    </ul>
+  </section>
+  <section>
+  <h2>How Do Adversarial Attacks Work?</h2>
+  <p>These attacks exploit the mathematical nature of machine learning models. By computing gradients and finding minimal perturbations that alter outputs, attackers can craft malicious inputs that look identical to the original data for humans but completely mislead the AI model.</p>
+  </section>
+  <section>
+    <h2>💥Real-World Examples</h2>
+  <ul>
+    <li>🚗 Autonomous Vehicles
+      In 2017, researchers demonstrated that simply placing stickers on a traffic sign could trick a Tesla’s image recognition system into misreading it. This raised major concerns about the safety of autonomous vehicles.</li>
+    <li>👁️ Facial Recognition Systems
 
+Hackers have shown that wearing printed glasses or patterned scarves can fool facial recognition systems — identifying one person as another or evading detection altogether.</li>
+    <li>🏥 Medical Imaging
+
+AI-based diagnostic systems can be manipulated to misclassify X-rays or MRI scans. In one study, a few pixels were changed in a chest X-ray image, causing a deep learning model to misdiagnose healthy lungs as pneumonia.</li>
+    <li>💳 Financial Fraud
+
+In the finance sector, adversarial inputs can be used to bypass fraud detection systems by modifying transaction attributes in ways that still appear normal to human auditors.</li>
+  </ul>
+  </section> -->
+ <!-- Gallery Section -->
+  <h2>Visual Examples (Gallery)</h2>
+  <div class="gallery">
+    <figure>
+      <img src="images/pick1.jpg" alt="Adversarial pick1">
+    </figure>
+    <figure>
+      <img src="images/pick2.jpg" alt="Adversarial pick2">
+    </figure>
+    <figure>
+      <img src="images/pick3.jpg" alt="Adversarial pick3">
+    </figure>
+    <figure>
+      <img src="images/pick4.jpg" alt="Adversarial pick4">
+    </figure>
+  </div> 
+<div>
+  <h2>🔐 Why Adversarial Attacks Matter</h2>
+    <p>
+      Adversarial attacks are not just theoretical — they expose <strong>systemic weaknesses</strong> in AI systems that could lead to devastating real-world consequences.
+    </p>
+    <ul>
+      <li>Healthcare: Incorrect diagnoses due to tampered data.</li>
+      <li>Autonomous Driving: Wrong object detection leading to accidents.</li>
+      <li>Cybersecurity: Malicious code bypassing AI defenses.</li>
+      <li>Finance: Fraudulent transactions going undetected.</li>
+    </ul>
+
+    <h2>🛡️ Defense Mechanisms Against Adversarial Attacks</h2>
+    <ol>
+      <li><strong>Adversarial Training</strong> – Retraining models with adversarial data to strengthen them.</li>
+      <li><strong>Gradient Masking</strong> – Hiding gradient information from attackers.</li>
+      <li><strong>Defensive Distillation</strong> – Using teacher-student models to smooth decision boundaries.</li>
+      <li><strong>Input Sanitization</strong> – Removing noise through preprocessing.</li>
+      <li><strong>Model Robustness Certification</strong> – Mathematically guaranteeing model stability.</li>
+      <li><strong>Explainable AI (XAI)</strong> – Promoting transparency to detect unusual outputs.</li>
+    </ol>
+
+    <h2>🧠 Adversarial Attacks in Text and Speech AI</h2>
+    <p>
+      Adversarial attacks aren’t limited to images. They also affect text and speech systems. In NLP, small word substitutions (“excellent” → “exce11ent”) can fool sentiment models. In voice AI, hidden audio signals can secretly trigger commands.
+    </p>
+
+    <h2>🧭 The Road Ahead: Research and Future Directions</h2>
+    <ul>
+      <li>Self-healing AI models that detect and recover from attacks.</li>
+      <li>Using GANs for simulating and defending against attacks.</li>
+      <li>Federated learning security for distributed models.</li>
+      <li>AI Red Teams that stress-test systems before deployment.</li>
+    </ul>
+
+    <h2>⚖️ Ethical Implications</h2>
+    <ul>
+      <li>Should AI developers be liable for preventable attacks?</li>
+      <li>Can ethical hacking through adversarial methods improve safety?</li>
+      <li>How do we balance AI innovation with user security?</li>
+    </ul>
+
+    <h2>🧩 Conclusion</h2>
+    <p>
+      Adversarial attacks remind us that AI, despite its power, is still fragile. They expose the difference between pattern recognition and real understanding. The path forward lies in building resilient, interpretable, and trustworthy AI systems that can resist deception.
+    </p>
 </div>
+    
+  <!-- <section>
+    <h2>🔐 Why Adversarial Attacks Matter</h2>
+
+<p>Adversarial attacks are not just theoretical — they expose systemic weaknesses in AI systems that could lead to devastating real-world consequences:
+<ul>
+  <li>Healthcare: Incorrect diagnoses due to tampered medical data.</li>
+
+
+<li>Autonomous Driving: Wrong object detection leading to accidents.</li>
+
+<li>Cybersecurity: Malicious code bypassing AI defenses.<
+
+Finance: Fraudulent transactions going undetected.
+
+They also pose ethical and trust-related risks — if users can’t trust AI outputs, adoption of intelligent systems in critical areas will slow down dramatically.</p>
+  </section>
+  <section>
+    <h2>Defense Mechanisms</h2>
+    <p>To counter adversarial attacks, researchers have developed several strategies:</p>
+    <ul>
+      <li><b>Adversarial Training:</b> Retraining models with adversarial examples improves robustness.</li>
+      <li><b>Gradient Masking:</b> Reduces the model’s sensitivity to input changes, making attacks harder.</li>
+      <li><b>Input Preprocessing:</b> Using filters or transformations to remove potential perturbations.</li>
+      <li><b>Model Verification:</b> Ensuring mathematical guarantees of robustness under certain conditions.</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Ethical and Security Implications</h2>
+  <p>As AI becomes more integrated into critical systems, adversarial robustness becomes not just a technical challenge but a moral imperative. Ensuring the safety of autonomous systems, biometric authentication, and medical AI requires resilience against such vulnerabilities.</p>
+  </section>
+  <section>
+    <h2>Conclusion</h2>
+    <p>Adversarial attacks highlight the importance of developing secure and interpretable AI systems. While AI continues to advance, ensuring its reliability and safety in the presence of malicious actors remains a critical research area. The future of AI security lies in combining machine learning with robust verification and continuous defense adaptation techniques.</p>
+  </section> -->
+
+  <div class="author">
+    <h3>About the Author</h3>
+    <p>Hi! I’m <b>Ishika Tanwar</b>, a technology enthusiast passionate about the field of Adversarial Attacks in AI. Through this blog, I aim to spread awareness about AI vulnerabilities and defense mechanisms.</p>
+  </div>
+  <div class="connect">
+    <h3>Connect With Me</h3>
+    <div class="social-icons">
+      <a href="https://github.com/Ishika-Tanwar" class="github" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/ishika-tanwar-821b3a2a1" class="linkedin" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </div>
+ <!-- <div class="btn-container">
+      <button class="btn like-btn" onclick="toggleLike()"><i class="fa-solid fa-heart"></i> Like</button>
+      <button class="btn" onclick="sharePost()"><i class="fa-solid fa-share-nodes"></i> Share</button>
+  </div> -->
+
+  <!-- Like and Share Section -->
+<div class="interaction-section">
+  <!-- <button id="likeBtn"><i class="fa fa-heart"></i> Like</button> -->
+  <button id="likeBtn" class="like-btn"><i class="fas fa-heart"></i> Like</button>
+  <span id="likeCount">0 Likes</span>
+  <div class="share-dropdown">
+    <button id="shareBtn"><i class="fa fa-share-alt"></i> Share</button>
+    <div class="share-options">
+      <a href="#" id="whatsappShare" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      <a href="#" id="gmailShare" target="_blank"><i class="fa fa-envelope"></i> Gmail</a>
+      <a href="#" id="outlookShare" target="_blank"><i class="fa fa-envelope-open"></i> Outlook</a>
+      
+    </div>
+  </div>
+</div>
+  
+  <div class="comment-box">
+    <h3>Leave a Comment</h3> 
+     <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="5" placeholder="Write your comment here..." required></textarea>
+      <button type="submit">Post Comment</button>
+    </form>
+  </div>
+
+</main>
+
+  <script>
+    
+const likeBtn = document.getElementById('likeBtn');
+    const likeCount = document.getElementById("likeCount");
+const shareBtn = document.getElementById("shareBtn");
+  const shareMenu = document.getElementById("shareMenu");
+
+  let likes = 0;
+  let liked = false;
+
+  // Load previous likes from localStorage (so it stays on refresh)
+  if (localStorage.getItem("likes")) {
+    likes = parseInt(localStorage.getItem("likes"));
+    likeCount.textContent = `${likes} Likes`;
+  }
+
+  likeBtn.addEventListener("click", () => {
+    liked = !liked;
+
+    if (liked) {
+      likes++;
+      likeBtn.classList.add("liked");
+      likeBtn.innerHTML = '<i class="fas fa-heart"></i> Liked ❤️';
+    } else {
+      likes--;
+      likeBtn.classList.remove("liked");
+      likeBtn.innerHTML = '<i class="fas fa-heart"></i> Like';
+    }
+
+    // Update count display
+    likeCount.textContent = `${likes} Likes`;
+
+    // Save to local storage
+    localStorage.setItem("likes", likes);
+  });
+// likeBtn.addEventListener('click', () => {
+//   likeBtn.classList.toggle('liked');
+//   likeBtn.innerHTML = likeBtn.classList.contains('liked') 
+//     ? '<i class="fa fa-heart"></i> Liked ❤️' 
+//     : '<i class="fa fa-heart"></i> Like';
+// });
+    
+shareBtn.addEventListener("click", () => {
+    shareMenu.style.display = shareMenu.style.display === "flex" ? "none" : "flex";
+  });
+    // YOUR BLOG LINK HERE 👇
+  const blogLink = "https://ishika-tanwar.github.io/adversarial-attack-blog/";
+
+  // PLATFORM SHARING LINKS
+  document.getElementById("whatsappShare").href =
+    `https://api.whatsapp.com/send?text=Check%20out%20this%20amazing%20blog!%20${encodeURIComponent(blogLink)}`;
+  
+  document.getElementById("gmailShare").href =
+    `https://mail.google.com/mail/?view=cm&fs=1&to=&su=Interesting%20Blog&body=Hey!%20Check%20out%20this%20blog:%20${encodeURIComponent(blogLink)}`;
+  
+  document.getElementById("outlookShare").href =
+    `https://outlook.live.com/owa/?path=/mail/action/compose&subject=Interesting%20Blog&body=${encodeURIComponent(blogLink)}`;
+  
+
+
+</script>
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
