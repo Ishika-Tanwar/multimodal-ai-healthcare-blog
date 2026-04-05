@@ -1,14 +1,10 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Multimodal AI Healthcare</title>
 
-<!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
@@ -16,59 +12,56 @@
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: #f4f7fb;
-  color: #333;
+  background: linear-gradient(to right, #eef2f3, #ffffff);
 }
 
 /* HEADER */
 header {
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  height: 100vh;
+  background: linear-gradient(135deg, #1f4037, #99f2c8);
   color: white;
-  text-align: center;
-  padding: 80px 20px;
-  animation: fadeIn 2s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 header h1 {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
+  text-align: center;
 }
 
 header p {
   font-size: 1.2rem;
-  opacity: 0.9;
 }
 
-/* CONTAINER */
-.container {
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 20px;
+/* SECTION */
+section {
+  padding: 60px 10%;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: 0.8s;
+}
+
+section.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* CARD */
 .card {
-  background: white;
+  background: rgba(255,255,255,0.9);
   padding: 25px;
   margin-bottom: 25px;
   border-radius: 15px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-  transition: transform 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-}
-
-/* HEADINGS */
-h2 {
-  color: #0f2027;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
 
 /* IMAGE */
 img {
   width: 100%;
   border-radius: 10px;
-  margin: 15px 0;
+  margin: 20px 0;
 }
 
 /* LIST */
@@ -76,33 +69,12 @@ ul {
   padding-left: 20px;
 }
 
-/* BUTTON */
-.btn {
-  background: #0078d7;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 25px;
-  border: none;
-  cursor: pointer;
-}
-
-.btn:hover {
-  background: #005fa3;
-}
-
 /* FOOTER */
 footer {
   text-align: center;
   padding: 20px;
-  background: #0f2027;
+  background: #1f4037;
   color: white;
-  margin-top: 40px;
-}
-
-/* ANIMATION */
-@keyframes fadeIn {
-  from {opacity: 0; transform: translateY(-20px);}
-  to {opacity: 1;}
 }
 
 </style>
@@ -111,69 +83,190 @@ footer {
 <body>
 
 <header>
-  <h1>Multimodal Generative AI</h1>
+  <h1>Multimodal Generative AI for Intelligent Healthcare Systems</h1>
   <p>Transforming Healthcare with Intelligent AI Systems</p>
 </header>
 
-<div class="container">
-
+<section>
 <div class="card">
 <h2>🧠 Introduction</h2>
-<img src="https://images.unsplash.com/photo-1581093588401-22d52b3c9c1b">
 <p>
-Multimodal Generative AI allows AI systems to understand text, images, and more together. 
-It helps doctors make better decisions using combined medical data.
+Artificial Intelligence (AI) has transformed healthcare in extraordinary ways — from automated diagnosis systems and predictive analytics to virtual assistants and personalized treatment planning. As AI becomes more deeply integrated into healthcare systems, the need for more intelligent and context-aware solutions is increasing.
+</p>
+<p>
+Traditional AI models are limited because they usually process only one type of data, such as text or images. However, real-world medical decisions depend on multiple data sources, including patient symptoms, clinical reports, lab results, and medical imaging like X-rays and MRI scans.
+</p>
+<p>
+To overcome this limitation, <b>Multimodal Generative AI</b> has emerged as a powerful innovation. It enables AI systems to understand, combine, and generate insights from multiple types of data simultaneously, making them more accurate, reliable, and human-like in decision-making.
 </p>
 </div>
+</section>
 
+<section>
 <div class="card">
-<h2>🤖 What is Multimodal AI?</h2>
-<img src="https://images.unsplash.com/photo-1581092918484-8317c48c1f5c">
+<h2>⚙️ What Exactly Is Multimodal Generative AI?</h2>
 <ul>
-<li>Understands text, images, audio</li>
-<li>Combines multiple data sources</li>
-<li>Generates intelligent output</li>
+<li>📝 Text</li>
+<li>🖼️ Images</li>
+<li>🎙️ Audio</li>
+<li>📊 Structured medical data</li>
+</ul>
+
+<p>
+Unlike traditional AI, multimodal AI combines multiple inputs into one system.
+</p>
+
+<p><b>Example:</b></p>
+<ul>
+<li>🖼️ X-ray image</li>
+<li>📝 Symptoms</li>
+<li>📄 Medical history</li>
+<li>🤖 AI gives diagnosis</li>
 </ul>
 </div>
+</section>
 
+<section>
 <div class="card">
-<h2>⚙️ How It Works</h2>
-<img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c">
-<p>AI processes text + images → combines → generates results</p>
-</div>
+<h2>🧩 The Science Behind Multimodal AI</h2>
+<img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Transformer_architecture.png">
 
-<div class="card">
-<h2>🏥 Applications</h2>
 <ul>
-<li>Medical Diagnosis</li>
-<li>Telemedicine</li>
-<li>AI Health Assistants</li>
+<li>Text → NLP models</li>
+<li>Images → Vision models</li>
+<li>Data → Numerical form</li>
+<li>Combined using cross-modal attention</li>
+</ul>
+
+<p><b>Example:</b></p>
+<p>Fever + X-ray → Pneumonia detection</p>
+</div>
+</section>
+
+<section>
+<div class="card">
+<h2>⚔️ Types of Multimodal Systems</h2>
+<ul>
+<li>Early Fusion</li>
+<li>Late Fusion</li>
+<li>Hybrid Fusion</li>
 </ul>
 </div>
+</section>
 
+<section>
 <div class="card">
-<h2>⚠️ Challenges</h2>
+<h2>💥 Real-World Applications</h2>
+<img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Medical_imaging_AI.jpg">
+
+<ul>
+<li>🏥 Medical Diagnosis</li>
+<li>🩻 Image Analysis</li>
+<li>📄 Report Simplification</li>
+<li>💻 Telemedicine</li>
+<li>🤖 AI Assistants</li>
+<li>👨‍⚕️ Decision Support</li>
+</ul>
+</div>
+</section>
+
+<section>
+<div class="card">
+<h2>🔐 Why Multimodal AI Matters</h2>
+<ul>
+<li>Faster diagnosis</li>
+<li>Better accuracy</li>
+<li>Improved care</li>
+<li>Rural access</li>
+</ul>
+</div>
+</section>
+
+<section>
+<div class="card">
+<h2>🛡️ Challenges</h2>
 <ul>
 <li>Data Privacy</li>
 <li>High Cost</li>
 <li>Complex Models</li>
+<li>Data Integration</li>
 </ul>
 </div>
+</section>
 
+<section>
+<div class="card">
+<h2>🧠 Limitations</h2>
+<ul>
+<li>Bias Problem</li>
+<li>Hallucination</li>
+<li>Lack of Explainability</li>
+<li>Data Dependency</li>
+</ul>
+</div>
+</section>
+
+<section>
 <div class="card">
 <h2>🚀 Future Scope</h2>
+<img src="https://upload.wikimedia.org/wikipedia/commons/f/fc/Digital_health_future.jpg">
+
 <ul>
-<li>Smart Hospitals</li>
-<li>Personalized Treatment</li>
-<li>AI Wearables</li>
+<li>Smart hospitals</li>
+<li>AI assistants</li>
+<li>Personalized treatment</li>
+<li>Wearable integration</li>
 </ul>
 </div>
+</section>
 
+<section>
+<div class="card">
+<h2>⚖️ Ethical Implications</h2>
+<ul>
+<li>Data privacy concerns</li>
+<li>Trust in AI decisions</li>
+<li>Responsibility for errors</li>
+</ul>
 </div>
+</section>
+
+<section>
+<div class="card">
+<h2>🧩 Conclusion</h2>
+<p>
+Multimodal Generative AI is transforming healthcare by combining multiple data types to improve understanding and decision-making.
+</p>
+</div>
+</section>
+
+<section>
+<div class="card">
+<h2>👩‍💻 About the Author</h2>
+<p>
+Hi! I’m <b>Ishika Tanwar</b>, passionate about AI and healthcare innovation.
+</p>
+</div>
+</section>
 
 <footer>
   <p>© Ishika Tanwar | AI Blog</p>
 </footer>
+
+<script>
+
+const sections = document.querySelectorAll("section");
+
+window.addEventListener("scroll", () => {
+  sections.forEach(sec => {
+    const top = sec.getBoundingClientRect().top;
+    if (top < window.innerHeight - 100) {
+      sec.classList.add("show");
+    }
+  });
+});
+
+</script>
 
 </body>
 </html>
