@@ -86,9 +86,9 @@ footer {
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
  .connect {
-  text-align: center;
-  margin-top: 40px;
-}
+      margin-top: 20px;
+      text-align: center;
+    }
 
 .connect h3 {
   font-size: 28px;
@@ -97,11 +97,13 @@ footer {
   font-weight: 600;
 }
 
-.social-icons {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-}
+.social-icons a {
+      text-decoration: none;
+      color: #001f3f;
+      font-size: 1.8rem;
+      margin: 0 10px;
+      transition: 0.3s ease;
+    }
 
 .social-icons a {
   text-decoration: none;
@@ -114,10 +116,10 @@ footer {
 }
 
 /* Hover Effects */
-.social-icons i:hover {
-  color: #0078d7;
-  transform: scale(1.2);
-}
+.social-icons a:hover {
+      color: #0074D9;
+      transform: scale(1.2);
+    }
 .interaction-section {
   display: flex;
   justify-content: center;
@@ -410,18 +412,12 @@ Hi! I’m Ishika, a technology enthusiast passionate about Artificial Intelligen
   <main>
 
 <div class="connect">
-  <h3>Connect With Me</h3>
-
-  <div class="social-icons">
-    <a href="https://github.com/Ishika-Tanwar" target="_blank">
-      <i class="fab fa-github"></i>
-    </a>
-
-    <a href="https://www.linkedin.com/in/ishika-tanwar-821b3a2a1" target="_blank">
-      <i class="fab fa-linkedin"></i>
-    </a>
-  </div>
-</div>
+        <h3>Connect With Me</h3>
+        <div class="social-icons">
+          <a href="https://github.com/Ishika-Tanwar" class="github" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/ishika-tanwar-821b3a2a1" class="linkedin" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
 
 <!-- Like + Share Section -->
 <div class="interaction-section">
