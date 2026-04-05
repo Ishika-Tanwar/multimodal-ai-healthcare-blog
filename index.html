@@ -8,7 +8,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
-
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
@@ -17,22 +16,18 @@ body {
 
 /* HEADER */
 header {
-  height: 50vh;
+  height: 100vh;
   background: linear-gradient(135deg, #1f4037, #99f2c8);
   color: white;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-header h1 {
-  font-size: 2.8rem;
   text-align: center;
 }
 
-header p {
-  font-size: 1.2rem;
+header h1 {
+  font-size: 2.5rem;
+  max-width: 800px;
 }
 
 /* SECTION */
@@ -50,23 +45,26 @@ section.show {
 
 /* CARD */
 .card {
-  background: rgba(255,255,255,0.9);
-  padding: 25px;
-  margin-bottom: 25px;
+  background: white;
+  padding: 30px;
+  margin-bottom: 30px;
   border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
-/* IMAGE */
+h2 {
+  color: #1f4037;
+}
+
+ul {
+  padding-left: 20px;
+  line-height: 1.8;
+}
+
 img {
   width: 100%;
   border-radius: 10px;
   margin: 20px 0;
-}
-
-/* LIST */
-ul {
-  padding-left: 20px;
 }
 
 /* FOOTER */
@@ -76,7 +74,6 @@ footer {
   background: #1f4037;
   color: white;
 }
-
 </style>
 </head>
 
@@ -84,27 +81,29 @@ footer {
 
 <header>
   <h1>Multimodal Generative AI for Intelligent Healthcare Systems</h1>
-  <p>Transforming Healthcare with Intelligent AI Systems</p>
 </header>
 
+<!-- INTRO -->
 <section>
 <div class="card">
 <h2>🧠 Introduction</h2>
-<p>
-Artificial Intelligence (AI) has transformed healthcare in extraordinary ways — from automated diagnosis systems and predictive analytics to virtual assistants and personalized treatment planning. As AI becomes more deeply integrated into healthcare systems, the need for more intelligent and context-aware solutions is increasing.
-</p>
-<p>
-Traditional AI models are limited because they usually process only one type of data, such as text or images. However, real-world medical decisions depend on multiple data sources, including patient symptoms, clinical reports, lab results, and medical imaging like X-rays and MRI scans.
-</p>
-<p>
-To overcome this limitation, <b>Multimodal Generative AI</b> has emerged as a powerful innovation. It enables AI systems to understand, combine, and generate insights from multiple types of data simultaneously, making them more accurate, reliable, and human-like in decision-making.
-</p>
+
+<p>Artificial Intelligence (AI) has transformed healthcare in extraordinary ways — from automated diagnosis systems and predictive analytics to virtual assistants and personalized treatment planning. As AI becomes more deeply integrated into healthcare systems, the need for more intelligent and context-aware solutions is increasing.</p>
+
+<p>Traditional AI models are limited because they usually process only one type of data, such as text or images. However, real-world medical decisions depend on multiple data sources, including patient symptoms, clinical reports, lab results, and medical imaging like X-rays and MRI scans.</p>
+
+<p>To overcome this limitation, <b>Multimodal Generative AI</b> has emerged as a powerful innovation. It enables AI systems to understand, combine, and generate insights from multiple types of data simultaneously, making them more accurate, reliable, and human-like in decision-making.</p>
+
 </div>
 </section>
 
+<!-- WHAT IS -->
 <section>
 <div class="card">
 <h2>⚙️ What Exactly Is Multimodal Generative AI?</h2>
+
+<p>In simple terms, Multimodal Generative AI is an advanced AI system that can process and generate different types of data such as:</p>
+
 <ul>
 <li>📝 Text</li>
 <li>🖼️ Images</li>
@@ -112,51 +111,60 @@ To overcome this limitation, <b>Multimodal Generative AI</b> has emerged as a po
 <li>📊 Structured medical data</li>
 </ul>
 
-<p>
-Unlike traditional AI, multimodal AI combines multiple inputs into one system.
-</p>
+<p>Unlike traditional AI, which works with a single input type, multimodal AI combines multiple inputs into one unified system.</p>
 
 <p><b>Example:</b></p>
 <ul>
-<li>🖼️ X-ray image</li>
-<li>📝 Symptoms</li>
-<li>📄 Medical history</li>
-<li>🤖 AI gives diagnosis</li>
+<li>🖼️ A patient uploads an X-ray image</li>
+<li>📝 Provides symptoms in text</li>
+<li>📄 Shares medical history</li>
+<li>🤖 AI generates diagnosis</li>
 </ul>
+
 </div>
 </section>
 
+<!-- SCIENCE -->
 <section>
 <div class="card">
 <h2>🧩 The Science Behind Multimodal AI</h2>
+
 <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Transformer_architecture.png">
 
+<p>Multimodal AI systems are built using advanced deep learning models, especially transformer architectures.</p>
+
 <ul>
-<li>Text → NLP models</li>
-<li>Images → Vision models</li>
-<li>Data → Numerical form</li>
+<li>Text → Natural Language Processing (NLP)</li>
+<li>Images → Computer Vision models</li>
+<li>Data → Numerical representation</li>
 <li>Combined using cross-modal attention</li>
 </ul>
 
 <p><b>Example:</b></p>
-<p>Fever + X-ray → Pneumonia detection</p>
+<p>Symptom: Fever + X-ray → Pneumonia detection</p>
+
 </div>
 </section>
 
+<!-- TYPES -->
 <section>
 <div class="card">
 <h2>⚔️ Types of Multimodal Systems</h2>
+
 <ul>
-<li>Early Fusion</li>
-<li>Late Fusion</li>
-<li>Hybrid Fusion</li>
+<li>Early Fusion – Combine at input stage</li>
+<li>Late Fusion – Combine after processing</li>
+<li>Hybrid Fusion – Mix of both</li>
 </ul>
+
 </div>
 </section>
 
+<!-- APPLICATION -->
 <section>
 <div class="card">
 <h2>💥 Real-World Applications</h2>
+
 <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Medical_imaging_AI.jpg">
 
 <ul>
@@ -164,108 +172,131 @@ Unlike traditional AI, multimodal AI combines multiple inputs into one system.
 <li>🩻 Image Analysis</li>
 <li>📄 Report Simplification</li>
 <li>💻 Telemedicine</li>
-<li>🤖 AI Assistants</li>
-<li>👨‍⚕️ Decision Support</li>
+<li>🤖 AI Health Assistants</li>
+<li>👨‍⚕️ Clinical Decision Support</li>
 </ul>
+
 </div>
 </section>
 
+<!-- IMPORTANCE -->
 <section>
 <div class="card">
 <h2>🔐 Why Multimodal AI Matters</h2>
+
 <ul>
-<li>Faster diagnosis</li>
-<li>Better accuracy</li>
-<li>Improved care</li>
-<li>Rural access</li>
+<li>Faster diagnosis ⏱️</li>
+<li>Better accuracy 🎯</li>
+<li>Improved patient care 💙</li>
+<li>Accessibility in remote areas 🌍</li>
 </ul>
+
 </div>
 </section>
 
+<!-- CHALLENGES -->
 <section>
 <div class="card">
-<h2>🛡️ Challenges</h2>
+<h2>🛡️ Challenges in Multimodal AI</h2>
+
 <ul>
-<li>Data Privacy</li>
-<li>High Cost</li>
-<li>Complex Models</li>
-<li>Data Integration</li>
+<li>🔒 Data Privacy</li>
+<li>💻 High computational cost</li>
+<li>🧩 Model complexity</li>
+<li>🔗 Data integration issues</li>
 </ul>
+
 </div>
 </section>
 
+<!-- LIMITATIONS -->
 <section>
 <div class="card">
 <h2>🧠 Limitations</h2>
+
 <ul>
-<li>Bias Problem</li>
-<li>Hallucination</li>
-<li>Lack of Explainability</li>
-<li>Data Dependency</li>
+<li>⚖️ Bias Problem</li>
+<li>❗ Hallucination</li>
+<li>🔍 Lack of Explainability</li>
+<li>📉 Data Quality Dependency</li>
 </ul>
+
 </div>
 </section>
 
+<!-- FUTURE -->
 <section>
 <div class="card">
 <h2>🚀 Future Scope</h2>
+
 <img src="https://upload.wikimedia.org/wikipedia/commons/f/fc/Digital_health_future.jpg">
 
 <ul>
-<li>Smart hospitals</li>
-<li>AI assistants</li>
-<li>Personalized treatment</li>
-<li>Wearable integration</li>
+<li>🏥 Smart hospitals</li>
+<li>🤖 Virtual assistants</li>
+<li>🧑‍⚕️ Personalized treatments</li>
+<li>⌚ Wearable integration</li>
 </ul>
+
 </div>
 </section>
 
+<!-- ETHICS -->
 <section>
 <div class="card">
 <h2>⚖️ Ethical Implications</h2>
+
 <ul>
-<li>Data privacy concerns</li>
-<li>Trust in AI decisions</li>
-<li>Responsibility for errors</li>
+<li>How to ensure data privacy?</li>
+<li>Can AI decisions be trusted?</li>
+<li>Who is responsible for AI errors?</li>
 </ul>
+
 </div>
 </section>
 
+<!-- CONCLUSION -->
 <section>
 <div class="card">
 <h2>🧩 Conclusion</h2>
+
 <p>
-Multimodal Generative AI is transforming healthcare by combining multiple data types to improve understanding and decision-making.
+Multimodal Generative AI represents a major advancement in artificial intelligence. By combining multiple data types, it allows systems to better understand complex healthcare scenarios.
 </p>
+
+<p>
+It has the potential to improve diagnosis, enhance patient care, and support medical professionals.
+</p>
+
 </div>
 </section>
 
+<!-- AUTHOR -->
 <section>
 <div class="card">
 <h2>👩‍💻 About the Author</h2>
+
 <p>
-Hi! I’m <b>Ishika Tanwar</b>, passionate about AI and healthcare innovation.
+Hi! I’m <b>Ishika</b>, a technology enthusiast passionate about Artificial Intelligence and its applications in healthcare.
 </p>
+
 </div>
 </section>
 
 <footer>
-  <p>© Ishika Tanwar | AI Blog</p>
+<p>© Ishika | AI Blog</p>
 </footer>
 
 <script>
-
 const sections = document.querySelectorAll("section");
 
 window.addEventListener("scroll", () => {
   sections.forEach(sec => {
-    const top = sec.getBoundingClientRect().top;
-    if (top < window.innerHeight - 100) {
+    if (sec.getBoundingClientRect().top < window.innerHeight - 100) {
       sec.classList.add("show");
     }
   });
 });
-
 </script>
 
 </body>
