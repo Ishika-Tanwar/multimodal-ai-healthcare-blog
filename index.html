@@ -50,7 +50,7 @@ section.show {
 
 /* CARD */
 .card {
-  background: #e6f1ff;;
+  background: rgba(255,255,255,0.9);
   padding: 25px;
   margin-bottom: 25px;
   border-radius: 15px;
@@ -111,19 +111,19 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px;
-  margin-top: 30px;
-} 
+  gap: 30px;
+  margin-top: 25px;
+}
 
 #likeBtn, #shareBtn {
   background-color: #0078d7;
   color: white;
   border: none;
-  padding: 10px 20px;
+  padding: 12px 25px;
   font-size: 1rem;
-  border-radius: 8px;
+  border-radius: 10px;
   cursor: pointer;
-  transition: background 0.3s ease, transform 0.3s ease;
+  transition: 0.3s;
 }
 
 #likeBtn:hover, #shareBtn:hover {
@@ -134,10 +134,11 @@ footer {
 #likeBtn.liked {
   background-color: #e63946;
 }
+
 #likeCount {
-  margin-left: 10px;
-  font-size: 16px;
-  color: #555;
+  font-size: 18px;
+  font-weight: 500;
+  color: #444;
 }
 .share-dropdown {
   position: relative;
@@ -204,7 +205,6 @@ footer {
       background-color: #112240;
     }
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-
 </style>
 </head>
 
@@ -396,29 +396,24 @@ Hi! I’m Ishika, a technology enthusiast passionate about Artificial Intelligen
 </div>
 </section>
   <main>
-    <div class="connect">
-    <h3>Connect With Me</h3>
-    <div class="social-icons">
-      <a href="https://github.com/Ishika-Tanwar" class="github" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-      <a href="https://www.linkedin.com/in/ishika-tanwar-821b3a2a1" class="linkedin" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-    </div>
+
+<div class="connect">
+  <h3>Connect With Me</h3>
+  <div class="social-icons">
+    <a href="https://github.com/Ishika-Tanwar" target="_blank">
+      <i class="fab fa-github"></i>
+    </a>
+    <a href="https://www.linkedin.com/in/ishika-tanwar-821b3a2a1" target="_blank">
+      <i class="fab fa-linkedin"></i>
+    </a>
   </div>
+</div>
 
-
-  <!-- Like and Share Section -->
+<!-- Like + Share Section -->
 <div class="interaction-section">
-  <!-- <button id="likeBtn"><i class="fa fa-heart"></i> Like</button> -->
-  <button id="likeBtn" class="like-btn"><i class="fas fa-heart"></i> Like</button>
+  <button id="likeBtn"><i class="fas fa-heart"></i> Like</button>
   <span id="likeCount">0 Likes</span>
-  <div class="share-dropdown">
-    <button id="shareBtn"><i class="fa fa-share-alt"></i> Share</button>
-    <div class="share-options">
-      <a href="#" id="whatsappShare" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-      <a href="#" id="gmailShare" target="_blank"><i class="fa fa-envelope"></i> Gmail</a>
-      <a href="#" id="outlookShare" target="_blank"><i class="fa fa-envelope-open"></i> Outlook</a>
-      
-    </div>
-  </div>
+  <button id="shareBtn"><i class="fas fa-share"></i> Share</button>
 </div>
   
   <div class="comment-box">
@@ -433,48 +428,47 @@ Hi! I’m Ishika, a technology enthusiast passionate about Artificial Intelligen
 
 </main>
 
-  <script>
-    
-const likeBtn = document.getElementById('likeBtn');
-    const likeCount = document.getElementById("likeCount");
-const shareBtn = document.getElementById("shareBtn");
-  const shareMenu = document.getElementById("shareMenu");
+ <script>
+const likeBtn = document.getElementById("likeBtn");
+const likeCount = document.getElementById("likeCount");
 
-  let likes = 0;
-  let liked = false;
+let likes = localStorage.getItem("likes") || 0;
+let liked = false;
 
-  // Load previous likes from localStorage (so it stays on refresh)
-  if (localStorage.getItem("likes")) {
-    likes = parseInt(localStorage.getItem("likes"));
-    likeCount.textContent = `${likes} Likes`;
+likeCount.innerText = likes + " Likes";
+
+likeBtn.addEventListener("click", () => {
+  if (!liked) {
+    likes++;
+    liked = true;
+    likeBtn.classList.add("liked");
+    likeBtn.innerHTML = '<i class="fas fa-heart"></i> Liked ❤️';
+  } else {
+    likes--;
+    liked = false;
+    likeBtn.classList.remove("liked");
+    likeBtn.innerHTML = '<i class="fas fa-heart"></i> Like';
   }
 
-  likeBtn.addEventListener("click", () => {
-    liked = !liked;
+  likeCount.innerText = likes + " Likes";
+  localStorage.setItem("likes", likes);
+});
 
-    if (liked) {
-      likes++;
-      likeBtn.classList.add("liked");
-      likeBtn.innerHTML = '<i class="fas fa-heart"></i> Liked ❤️';
-    } else {
-      likes--;
-      likeBtn.classList.remove("liked");
-      likeBtn.innerHTML = '<i class="fas fa-heart"></i> Like';
-    }
+// SHARE BUTTON
+document.getElementById("shareBtn").addEventListener("click", () => {
+  const url = "https://ishika-tanwar.github.io/multimodal-ai-blog/";
 
-    // Update count display
-    likeCount.textContent = `${likes} Likes`;
-
-    // Save to local storage
-    localStorage.setItem("likes", likes);
-  });
-// likeBtn.addEventListener('click', () => {
-//   likeBtn.classList.toggle('liked');
-//   likeBtn.innerHTML = likeBtn.classList.contains('liked') 
-//     ? '<i class="fa fa-heart"></i> Liked ❤️' 
-//     : '<i class="fa fa-heart"></i> Like';
-// });
-    
+  if (navigator.share) {
+    navigator.share({
+      title: "Multimodal AI Blog",
+      url: url
+    });
+  } else {
+    alert("Copy this link: " + url);
+  }
+});
+</script>
+  <script>  
 shareBtn.addEventListener("click", () => {
     shareMenu.style.display = shareMenu.style.display === "flex" ? "none" : "flex";
   });
