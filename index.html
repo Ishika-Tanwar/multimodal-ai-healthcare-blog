@@ -69,13 +69,21 @@ ul {
   padding-left: 20px;
 }
 
-/* /* FOOTER */
+ /* FOOTER
 footer {
   text-align: center;
   padding: 20px;
   background: #1f4037;
   color: white;
 } */
+  main {
+      max-width: 900px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
   .connect {
     margin-top: 30px;
   text-align: center;
@@ -194,6 +202,7 @@ footer {
     .comment-box button:hover {
       background-color: #112240;
     }
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
 </style>
 </head>
@@ -385,13 +394,19 @@ Hi! I’m Ishika, a technology enthusiast passionate about Artificial Intelligen
 </p>
 </div>
 </section>
-  <div class="connect">
+  <main>
+    <div class="connect">
     <h3>Connect With Me</h3>
     <div class="social-icons">
       <a href="https://github.com/Ishika-Tanwar" class="github" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
       <a href="https://www.linkedin.com/in/ishika-tanwar-821b3a2a1" class="linkedin" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
     </div>
   </div>
+ <!-- <div class="btn-container">
+      <button class="btn like-btn" onclick="toggleLike()"><i class="fa-solid fa-heart"></i> Like</button>
+      <button class="btn" onclick="sharePost()"><i class="fa-solid fa-share-nodes"></i> Share</button>
+  </div> -->
+
   <!-- Like and Share Section -->
 <div class="interaction-section">
   <!-- <button id="likeBtn"><i class="fa fa-heart"></i> Like</button> -->
@@ -417,7 +432,67 @@ Hi! I’m Ishika, a technology enthusiast passionate about Artificial Intelligen
       <button type="submit">Post Comment</button>
     </form>
   </div>
+
 </main>
+
+  <script>
+    
+const likeBtn = document.getElementById('likeBtn');
+    const likeCount = document.getElementById("likeCount");
+const shareBtn = document.getElementById("shareBtn");
+  const shareMenu = document.getElementById("shareMenu");
+
+  let likes = 0;
+  let liked = false;
+
+  // Load previous likes from localStorage (so it stays on refresh)
+  if (localStorage.getItem("likes")) {
+    likes = parseInt(localStorage.getItem("likes"));
+    likeCount.textContent = `${likes} Likes`;
+  }
+
+  likeBtn.addEventListener("click", () => {
+    liked = !liked;
+
+    if (liked) {
+      likes++;
+      likeBtn.classList.add("liked");
+      likeBtn.innerHTML = '<i class="fas fa-heart"></i> Liked ❤️';
+    } else {
+      likes--;
+      likeBtn.classList.remove("liked");
+      likeBtn.innerHTML = '<i class="fas fa-heart"></i> Like';
+    }
+
+    // Update count display
+    likeCount.textContent = `${likes} Likes`;
+
+    // Save to local storage
+    localStorage.setItem("likes", likes);
+  });
+// likeBtn.addEventListener('click', () => {
+//   likeBtn.classList.toggle('liked');
+//   likeBtn.innerHTML = likeBtn.classList.contains('liked') 
+//     ? '<i class="fa fa-heart"></i> Liked ❤️' 
+//     : '<i class="fa fa-heart"></i> Like';
+// });
+    
+shareBtn.addEventListener("click", () => {
+    shareMenu.style.display = shareMenu.style.display === "flex" ? "none" : "flex";
+  });
+    // YOUR BLOG LINK HERE 👇
+  const blogLink = "https://ishika-tanwar.github.io/adversarial-attack-blog/";
+
+  // PLATFORM SHARING LINKS
+  document.getElementById("whatsappShare").href =
+    `https://api.whatsapp.com/send?text=Check%20out%20this%20amazing%20blog!%20${encodeURIComponent(blogLink)}`;
+  
+  document.getElementById("gmailShare").href =
+    `https://mail.google.com/mail/?view=cm&fs=1&to=&su=Interesting%20Blog&body=Hey!%20Check%20out%20this%20blog:%20${encodeURIComponent(blogLink)}`;
+  
+  document.getElementById("outlookShare").href =
+    `https://outlook.live.com/owa/?path=/mail/action/compose&subject=Interesting%20Blog&body=${encodeURIComponent(blogLink)}`;
+
 
   <script>
     
@@ -478,7 +553,7 @@ shareBtn.addEventListener("click", () => {
     `https://outlook.live.com/owa/?path=/mail/action/compose&subject=Interesting%20Blog&body=${encodeURIComponent(blogLink)}`;
   
 
-
+  
 </script>
 
 <!-- <footer>
