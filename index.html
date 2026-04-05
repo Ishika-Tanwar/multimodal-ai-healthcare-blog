@@ -267,6 +267,101 @@ Hi! I’m Ishika, a technology enthusiast passionate about Artificial Intelligen
 </p>
 </div>
 </section>
+  <div class="connect">
+    <h3>Connect With Me</h3>
+    <div class="social-icons">
+      <a href="https://github.com/Ishika-Tanwar" class="github" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/ishika-tanwar-821b3a2a1" class="linkedin" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </div>
+  <!-- Like and Share Section -->
+<div class="interaction-section">
+  <!-- <button id="likeBtn"><i class="fa fa-heart"></i> Like</button> -->
+  <button id="likeBtn" class="like-btn"><i class="fas fa-heart"></i> Like</button>
+  <span id="likeCount">0 Likes</span>
+  <div class="share-dropdown">
+    <button id="shareBtn"><i class="fa fa-share-alt"></i> Share</button>
+    <div class="share-options">
+      <a href="#" id="whatsappShare" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      <a href="#" id="gmailShare" target="_blank"><i class="fa fa-envelope"></i> Gmail</a>
+      <a href="#" id="outlookShare" target="_blank"><i class="fa fa-envelope-open"></i> Outlook</a>
+      
+    </div>
+  </div>
+</div>
+  
+  <div class="comment-box">
+    <h3>Leave a Comment</h3> 
+     <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="5" placeholder="Write your comment here..." required></textarea>
+      <button type="submit">Post Comment</button>
+    </form>
+  </div>
+</main>
+
+  <script>
+    
+const likeBtn = document.getElementById('likeBtn');
+    const likeCount = document.getElementById("likeCount");
+const shareBtn = document.getElementById("shareBtn");
+  const shareMenu = document.getElementById("shareMenu");
+
+  let likes = 0;
+  let liked = false;
+
+  // Load previous likes from localStorage (so it stays on refresh)
+  if (localStorage.getItem("likes")) {
+    likes = parseInt(localStorage.getItem("likes"));
+    likeCount.textContent = `${likes} Likes`;
+  }
+
+  likeBtn.addEventListener("click", () => {
+    liked = !liked;
+
+    if (liked) {
+      likes++;
+      likeBtn.classList.add("liked");
+      likeBtn.innerHTML = '<i class="fas fa-heart"></i> Liked ❤️';
+    } else {
+      likes--;
+      likeBtn.classList.remove("liked");
+      likeBtn.innerHTML = '<i class="fas fa-heart"></i> Like';
+    }
+
+    // Update count display
+    likeCount.textContent = `${likes} Likes`;
+
+    // Save to local storage
+    localStorage.setItem("likes", likes);
+  });
+// likeBtn.addEventListener('click', () => {
+//   likeBtn.classList.toggle('liked');
+//   likeBtn.innerHTML = likeBtn.classList.contains('liked') 
+//     ? '<i class="fa fa-heart"></i> Liked ❤️' 
+//     : '<i class="fa fa-heart"></i> Like';
+// });
+    
+shareBtn.addEventListener("click", () => {
+    shareMenu.style.display = shareMenu.style.display === "flex" ? "none" : "flex";
+  });
+    // YOUR BLOG LINK HERE 👇
+  const blogLink = "https://ishika-tanwar.github.io/adversarial-attack-blog/";
+
+  // PLATFORM SHARING LINKS
+  document.getElementById("whatsappShare").href =
+    `https://api.whatsapp.com/send?text=Check%20out%20this%20amazing%20blog!%20${encodeURIComponent(blogLink)}`;
+  
+  document.getElementById("gmailShare").href =
+    `https://mail.google.com/mail/?view=cm&fs=1&to=&su=Interesting%20Blog&body=Hey!%20Check%20out%20this%20blog:%20${encodeURIComponent(blogLink)}`;
+  
+  document.getElementById("outlookShare").href =
+    `https://outlook.live.com/owa/?path=/mail/action/compose&subject=Interesting%20Blog&body=${encodeURIComponent(blogLink)}`;
+  
+
+
+</script>
 
 <!-- <footer>
   <p>© Ishika Tanwar | AI Blog</p>
