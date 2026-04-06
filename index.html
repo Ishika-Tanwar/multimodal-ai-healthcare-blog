@@ -64,18 +64,16 @@ img {
   margin: 20px 0;
 }
   .gallery {
-  display: flex;
-  justify-content: center;
+  width: 100%;   /* take full card width */
   margin: 20px 0;
 }
 
 .gallery img {
-  width: 250px;      /* control width */
-  height: 180px;     /* control height */
-  object-fit: cover; /* keeps image ratio clean */
+  width: 100%;        /* match card width */
+  height: 300px;      /* fixed height (you can adjust) */
+  object-fit: cover;  /* prevents stretching */
   border-radius: 10px;
 }
-
 /* LIST */
 ul {
   padding-left: 20px;
