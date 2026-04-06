@@ -63,15 +63,16 @@ img {
   border-radius: 10px;
   margin: 20px 0;
 }
-  .gallery {
-  width: 100%;   /* take full card width */
+ .gallery {
+  display: flex;
+  justify-content: center;
   margin: 20px 0;
 }
 
 .gallery img {
-  width: 100%;        /* match card width */
-  height: 300px;      /* fixed height (you can adjust) */
-  object-fit: cover;  /* prevents stretching */
+  width: 500px;      /* control width */
+  height: 500px;     /* control height */
+  object-fit: cover; /* keeps image ratio clean */
   border-radius: 10px;
 }
 /* LIST */
